@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.13.0 on win32)" generated="2024-10-28T16:36:36.289733" rpa="false" schemaversion="5">
+<suite id="s1" name="Signup" source="F:\automação\Robot\QAx\projects\RobotSelenium\tests\signup.robot">
+<test id="s1-t1" name="Valid Login" line="7">
+<kw name="Start session" owner="base">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-10-28T16:36:36.546674" level="INFO">Opening browser 'Chrome' to base url 'https://walkdog.vercel.app'.</msg>
+<arg>${LOGIN_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-10-28T16:36:36.546455" elapsed="1.908000"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2024-10-28T16:36:38.455152" level="INFO">Verifying element 'xpath=//h1[text()="Cuidado e diversão em cada passo"]' contains exact text 'Cuidado e diversão em cada passo'.</msg>
+<arg>${TITLE_HOME}</arg>
+<arg>Cuidado e diversão em cada passo</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2024-10-28T16:36:38.454690" elapsed="0.026378"/>
+</kw>
+<status status="PASS" start="2024-10-28T16:36:36.545858" elapsed="1.935335"/>
+</kw>
+<kw name="Click to Register" owner="signup">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-28T16:36:38.481872" level="INFO">Clicking element 'xpath=//strong[text()='Quero ser Dog Walker']'.</msg>
+<arg>${BUTTON_REGISTER}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-28T16:36:38.481709" elapsed="0.069754"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2024-10-28T16:36:38.551803" level="INFO">Verifying element 'xpath=//h1[text()="Faça seu cadastro"]' contains exact text 'Faça seu cadastro'.</msg>
+<arg>${TITLE_SIGNUP}</arg>
+<arg>Faça seu cadastro</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2024-10-28T16:36:38.551611" elapsed="0.020252"/>
+</kw>
+<status status="PASS" start="2024-10-28T16:36:38.481463" elapsed="0.090521"/>
+</kw>
+<kw name="Fill signup form" owner="signup">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-10-28T16:36:38.573017" level="INFO">${DOG_WALKER} = {'Completedname': 'Jorge Matias', 'email': 'jorge@hotmail.com', 'cpf': '00000014141', 'cep': '04534011', 'number': '1000', 'complement': 'ap 28', 'cnh': 'toretto.jpg'}</msg>
+<var>${DOG_WALKER}</var>
+<arg>Completedname=Jorge Matias</arg>
+<arg>email=jorge@hotmail.com</arg>
+<arg>cpf=00000014141</arg>
+<arg>cep=04534011</arg>
+<arg>number=1000</arg>
+<arg>complement=ap 28</arg>
+<arg>cnh=toretto.jpg</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-10-28T16:36:38.572646" elapsed="0.000413"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-28T16:36:38.573776" level="INFO">Typing text 'Jorge Matias' into text field 'xpath=//input[@placeholder="Nome completo"]'.</msg>
+<arg>${BOX_NAME}</arg>
+<arg>${DOG_WALKER["Completedname"]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-28T16:36:38.573225" elapsed="0.111416"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-28T16:36:38.685314" level="INFO">Typing text 'jorge@hotmail.com' into text field 'xpath=//input[@name="email"]'.</msg>
+<arg>${BOXEMAIL}</arg>
+<arg>${DOG_WALKER["email"]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-28T16:36:38.684798" elapsed="0.085894"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-28T16:36:38.771318" level="INFO">Typing text '00000014141' into text field 'xpath=//input[@name="cpf"]'.</msg>
+<arg>${BOXCPF}</arg>
+<arg>${DOG_WALKER["cpf"]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-28T16:36:38.770843" elapsed="0.069959"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-28T16:36:38.841433" level="INFO">Typing text '04534011' into text field 'xpath=//input[@name="cep"]'.</msg>
+<arg>${BOXCEP}</arg>
+<arg>${DOG_WALKER["cep"]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-28T16:36:38.840952" elapsed="0.064110"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-28T16:36:38.905488" level="INFO">Clicking element 'xpath=//input[@value="Buscar CEP"]'.</msg>
+<arg>${BUTTONCEP}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-28T16:36:38.905247" elapsed="0.036861"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-28T16:36:38.942763" level="INFO">Typing text '1000' into text field 'xpath=//input[@name="addressNumber"]'.</msg>
+<arg>${ADRESSNUMBER}</arg>
+<arg>${DOG_WALKER["number"]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-28T16:36:38.942269" elapsed="0.064646"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-28T16:36:39.007506" level="INFO">Typing text 'ap 28' into text field 'xpath=//input[@name="addressDetails"]'.</msg>
+<arg>${ADRESSCOMPLEMENT}</arg>
+<arg>${DOG_WALKER["complement"]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-28T16:36:39.007063" elapsed="0.062182"/>
+</kw>
+<kw name="Choose File" owner="SeleniumLibrary">
+<msg time="2024-10-28T16:36:39.069644" level="INFO">Sending F:\automação\Robot\QAx\projects\RobotSelenium\resources\fixtures\toretto.jpg to browser.</msg>
+<arg>${ATTACHFILE}</arg>
+<arg>${EXECDIR}/resources/fixtures/${dog_walker}[cnh]</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<status status="PASS" start="2024-10-28T16:36:39.069392" elapsed="0.028681"/>
+</kw>
+<status status="PASS" start="2024-10-28T16:36:38.572351" elapsed="0.525821"/>
+</kw>
+<kw name="Evidence" owner="base">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2024-10-28T16:36:39.215246" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="inicial.jpg"&gt;&lt;img src="inicial.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-10-28T16:36:39.215343" level="INFO">C:\Python313\Lib\site-packages\selenium\webdriver\remote\webdriver.py:829: UserWarning: name used for saved screenshot does not match file type. It should end with a `.png` extension
+  return self.get_screenshot_as_file(filename)</msg>
+<arg>${EXECDIR}/logs/inicial.jpg</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2024-10-28T16:36:39.098640" elapsed="0.117122"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2024-10-28T16:36:39.216427" level="INFO">Executing JavaScript:
+window.scrollBy(0, 850);
+Without any arguments.</msg>
+<arg>window.scrollBy(0, 850);</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2024-10-28T16:36:39.215955" elapsed="0.005331"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2024-10-28T16:36:39.396965" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="end.jpg"&gt;&lt;img src="end.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/logs/end.jpg</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2024-10-28T16:36:39.221451" elapsed="0.175615"/>
+</kw>
+<status status="PASS" start="2024-10-28T16:36:39.098426" elapsed="0.298737"/>
+</kw>
+<kw name="Submit signup form" owner="signup">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-28T16:36:39.398044" level="INFO">Clicking element 'xpath=//button[@type="submit"]'.</msg>
+<arg>${BUTTONSUBMIT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-28T16:36:39.397802" elapsed="0.042927"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-10-28T16:36:41.441880" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-10-28T16:36:39.440876" elapsed="2.001337"/>
+</kw>
+<status status="PASS" start="2024-10-28T16:36:39.397483" elapsed="2.045279"/>
+</kw>
+<kw name="Check sucess submit" owner="signup">
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2024-10-28T16:36:41.455055" level="INFO">Verifying element 'xpath=//div[@class="swal2-html-container"]' contains exact text 'Recebemos o seu cadastro e em breve retornaremos o contato.'.</msg>
+<arg>${TITTLESUCESS}</arg>
+<arg>Recebemos o seu cadastro e em breve retornaremos o contato.</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2024-10-28T16:36:41.454042" elapsed="0.036622"/>
+</kw>
+<status status="PASS" start="2024-10-28T16:36:41.453052" elapsed="0.037739"/>
+</kw>
+<kw name="Finish session" owner="base">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2024-10-28T16:36:41.622435" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="finish.jpg"&gt;&lt;img src="finish.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>F:/automação/Robot/QAx/projects/RobotSelenium/logs/finish.jpg</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2024-10-28T16:36:41.491421" elapsed="0.131128"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-10-28T16:36:41.622736" elapsed="2.136860"/>
+</kw>
+<status status="PASS" start="2024-10-28T16:36:41.491117" elapsed="2.268906"/>
+</kw>
+<status status="PASS" start="2024-10-28T16:36:36.545194" elapsed="7.222710"/>
+</test>
+<doc>Registre on Walkdogs</doc>
+<status status="PASS" start="2024-10-28T16:36:36.291065" elapsed="7.480292"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Signup">Signup</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

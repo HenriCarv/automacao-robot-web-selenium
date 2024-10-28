@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.13.0 on win32)" generated="2024-10-25T16:43:43.660069" rpa="false" schemaversion="5">
+<suite id="s1" name="RobotSelenium" source="F:\automação\Robot\QAx\projects\RobotSelenium">
+<suite id="s1-s1" name="Tests" source="F:\automação\Robot\QAx\projects\RobotSelenium\tests">
+<suite id="s1-s1-s1" name="Hello" source="F:\automação\Robot\QAx\projects\RobotSelenium\tests\hello.robot">
+<test id="s1-s1-s1-t1" name="Valid Login" line="10">
+<kw name="Open Browser To Login Page">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-10-25T16:43:43.904010" level="INFO">Opening browser 'Chrome' to base url 'https://walkdog.vercel.app'.</msg>
+<arg>${LOGIN_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-10-25T16:43:43.903549" elapsed="1.959211"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2024-10-25T16:43:45.864525" level="INFO">Verifying element 'h1' contains exact text 'Cuidado e diversão em cada passo'.</msg>
+<msg time="2024-10-25T16:43:46.063868" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-10-25T16:43:46.064206" level="FAIL">Element with locator 'h1' not found.</msg>
+<arg>h1</arg>
+<arg>Cuidado e diversão em cada passo</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="FAIL" start="2024-10-25T16:43:45.863106" elapsed="0.204304">Element with locator 'h1' not found.</status>
+</kw>
+<status status="FAIL" start="2024-10-25T16:43:43.902467" elapsed="2.165184">Element with locator 'h1' not found.</status>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-10-25T16:43:46.068010" elapsed="2.150826"/>
+</kw>
+<status status="FAIL" start="2024-10-25T16:43:43.901299" elapsed="4.317832">Element with locator 'h1' not found.</status>
+</test>
+<doc>Simple example using SeleniumLibrary.</doc>
+<status status="FAIL" start="2024-10-25T16:43:43.689402" elapsed="4.533159"/>
+</suite>
+<status status="FAIL" start="2024-10-25T16:43:43.687125" elapsed="4.541141"/>
+</suite>
+<status status="FAIL" start="2024-10-25T16:43:43.663670" elapsed="4.568076"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="RobotSelenium">RobotSelenium</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Tests">RobotSelenium.Tests</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="Hello">RobotSelenium.Tests.Hello</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
